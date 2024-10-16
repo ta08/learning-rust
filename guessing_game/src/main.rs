@@ -14,7 +14,13 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
-        let guess: u32 = guess.trim().parse().expect("Please input a number.");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Invalid input. Please enter a number.");
+                continue;
+            }
+        };
 
         println!("You guessed: {}", guess);
 
@@ -23,6 +29,7 @@ fn main() {
             Ordering::Greater => println!("Greater"),
             Ordering::Equal => {
                 println!("Equal!");
+                println!("You Win!");
                 break;
             }
         }

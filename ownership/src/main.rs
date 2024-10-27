@@ -1,9 +1,9 @@
 fn main() {
     let s = String::from("hello"); // sがスコープに入る
 
-    takes_ownership(s);
+    takes_ownership(&s);
 
-    println(s); // sの値が関数にムーブされ...
+    println!("{}",s); // sの値が関数にムーブされ...
                 // ... ここではもう有効ではない
     let x = 5; // xがスコープに入る
 
@@ -13,7 +13,7 @@ fn main() {
 } // ここでxがスコープを抜け、sもスコープを抜ける。ただし、sの値はムーブされているので、何も特別なことは起こらない。
   //
 
-fn takes_ownership(some_string: String) {
+fn takes_ownership(some_string: &String) {
     // some_stringがスコープに入る。
     println!("{}", some_string);
 } // ここでsome_stringがスコープを抜け、`drop`が呼ばれる。後ろ盾してたメモリが解放される。

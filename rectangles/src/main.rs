@@ -14,6 +14,38 @@ impl Rectangle {
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_area() {
+        let rect = Rectangle {
+            width: 10,
+            height: 20,
+        };
+        assert_eq!(rect.area(), 200);
+    }
+
+    #[test]
+    fn test_area_zero_width() {
+        let rect = Rectangle {
+            width: 0,
+            height: 20,
+        };
+        assert_eq!(rect.area(), 0);
+    }
+
+    #[test]
+    fn test_area_zero_height() {
+        let rect = Rectangle {
+            width: 10,
+            height: 0,
+        };
+        assert_eq!(rect.area(), 0);
+    }
+}
+
 fn main() {
     let rectangle = Rectangle {
         width: 30,

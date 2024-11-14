@@ -14,6 +14,49 @@ mod chapter81 {
             println!("{}", y);
         }
 
+        // not work this one
+        // for y in &ys {
+        //     *y *= 10.0;
+        //     println!("{}", y);
+        // }
+
+        for y in &mut ys {
+            *y *= 10.0;
+            println!("{}", y);
+        }
+
+        enum SpreadsheetCell {
+            Int(i32),
+            Float(f64),
+            Text(String),
+        }
+
+        let row = vec![
+            SpreadsheetCell::Int(3),
+            SpreadsheetCell::Text(String::from("blue")),
+            SpreadsheetCell::Float(10.12),
+        ];
+
+
+        for r in &row {
+            match r {
+                SpreadsheetCell::Int(x) => {println!("Int! {}", x);}
+                SpreadsheetCell::Float(x) => {println!("Float! {}", x);}
+                SpreadsheetCell::Text(x) => {println!("Textttt! {}", x);}
+            }
+        }
+
+        let zs = {
+            let x = 3;
+            let mut ds = vec![1, 2, 3];
+            ds.push(x);
+            ds.iter().map(|x| x * 2).collect::<Vec<i32>>()
+        };
+
+        for z in &zs {
+            println!("{}", z);
+        }
+
     }
 }
 

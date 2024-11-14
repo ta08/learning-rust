@@ -1,3 +1,7 @@
+use chapter82::chapter82mod::chapter82function;
+
+mod chapter82;
+
 mod chapter81 {
     pub fn sample81() {
         // let xs: Vec<i32> = Vec::new();
@@ -58,6 +62,9 @@ mod chapter81 {
         }
 
     }
+}
+pub fn function_chapter82(){
+    chapter82function();
 }
 
 pub fn function_chapter81() {

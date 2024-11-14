@@ -1,7 +1,19 @@
-
-mod chapter81{
+mod chapter81 {
     pub fn sample81() {
-        println!("Hello, world! from chapter 81 mod");
+        // let xs: Vec<i32> = Vec::new();
+        let mut ys = vec![1.2, 2.0, 3.3, 4.0, 5.9];
+
+        for y in ys {
+            println!("{}", y);
+        }
+
+        ys.push(1.2);
+        println!("{:?}", ys);
+
+        for y in &ys {
+            println!("{}", y);
+        }
+
     }
 }
 

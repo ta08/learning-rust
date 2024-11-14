@@ -3,7 +3,7 @@ mod chapter81 {
         // let xs: Vec<i32> = Vec::new();
         let mut ys = vec![1.2, 2.0, 3.3, 4.0, 5.9];
 
-        for y in ys {
+        for y in &ys {
             println!("{}", y);
         }
 

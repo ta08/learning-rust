@@ -1,6 +1,9 @@
 use chapter82::chapter82mod::chapter82function;
+use chapter83::chapter83mod::chapter83function;
 
 mod chapter82;
+
+mod chapter83;
 
 mod chapter81 {
     pub fn sample81() {
@@ -69,4 +72,8 @@ pub fn function_chapter82(){
 
 pub fn function_chapter81() {
     chapter81::sample81();
+}
+
+pub fn function_chapter83(){
+    chapter83function();
 }
